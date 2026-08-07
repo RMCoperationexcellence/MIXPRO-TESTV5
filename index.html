@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIXPRO WinForms UI Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="win-app" aria-label="Production control Windows application prototype">
+    <nav class="top-tabs">
+      <button class="tab active"><span class="tab-icon gear"></span>Operation Pages</button>
+      <button class="tab"><span class="tab-icon wrench"></span>Musteri Bilgileri</button>
+      <button class="tab"><span class="tab-icon recipe"></span>Recipes</button>
+      <button class="tab wide"><span class="tab-icon plan"></span>Uretim Planlama ve<br>Raporlari</button>
+      <button class="tab"><span class="tab-icon inv"></span>Inventory Operations</button>
+      <button class="tab"><span class="tab-icon users"></span>User Operations</button>
+      <button class="tab"><span class="tab-icon settings"></span>Settings</button>
+      <button class="tab"><span class="tab-icon setup"></span>Setup</button>
+      <button class="tab"><span class="tab-icon logout"></span>Log Out</button>
+    </nav>
+
+    <section class="plant">
+      <aside class="meter-stack">
+        <div class="meter-card small">
+          <div class="meter-title">Aggregate</div>
+          <div class="led">0.00</div>
+          <div class="micro-controls">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="meter-card small">
+          <div class="meter-title">Cement</div>
+          <div class="led">0.00</div>
+          <div class="micro-controls">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="meter-card small">
+          <div class="meter-title">Water</div>
+          <div class="led">0.00</div>
+          <div class="micro-controls">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="meter-card small">
+          <div class="meter-title">Additive</div>
+          <div class="led">0.00</div>
+          <div class="micro-controls">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="meter-card analyzer">
+          <div class="meter-title">Analyzer</div>
+          <div class="analyzer-face">
+            <div class="scale-line"></div>
+            <div class="analyzer-numbers">
+              <span>0.00</span>
+              <span>0.00</span>
+              <span>0.00</span>
+            </div>
+            <div class="analyzer-units">
+              <b>V</b>
+              <b>A</b>
+              <b>Hz</b>
+            </div>
+          </div>
+          <div class="micro-controls round">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="aggregate-area">
+        <div class="inventory-table">
+          <div></div><b>Required</b><b>Given</b><b>Inventory</b>
+          <span>0.00 kg</span><span>0.00 kg</span><strong>+14,001.00</strong>
+          <span>0.00 kg</span><span>0.00 kg</span><strong>-10,150.00</strong>
+          <span>0.00 kg</span><span>0.00 kg</span><strong>-10,565.00</strong>
+          <span>0.00 kg</span><span>0.00 kg</span><strong>-4,239.00</strong>
+        </div>
+        <div class="bin-row">
+          <div class="agg-bin"><div class="sensor"></div><div class="gate"></div><div class="bin-no">1</div><p>TAS TOZU</p></div>
+          <div class="agg-bin"><div class="gate"></div><div class="bin-no">2</div><p>YIKANMIS KUM</p></div>
+          <div class="agg-bin"><div class="gate"></div><div class="bin-no">3</div><p>MICIR</p></div>
+          <div class="agg-bin"><div class="gate"></div><div class="bin-no">4</div></div>
+        </div>
+        <div class="blue-conveyor">
+          <div class="belt-teeth"></div>
+          <div class="yellow-roller left"></div>
+          <div class="yellow-roller right"></div>
+        </div>
+        <div class="scale-label">0.00 kg</div>
+        <div class="sensor ground"></div>
+      </div>
+
+      <div class="central-process">
+        <div class="silo-cluster top">
+          <div class="cement-feed left-feed">
+            <label>katki1</label>
+            <div class="silo-icon"></div>
+            <span class="blue-label">271.10 kg</span>
+            <span class="red-label">-210.30 kg</span>
+            <div class="round-node">1</div>
+            <div class="blue-label small-label">0.00 kg</div>
+          </div>
+          <div class="cement-feed right-feed">
+            <div class="silo-icon"></div>
+            <div class="round-node">2</div>
+            <div class="blue-label small-label">0.00 kg</div>
+          </div>
+        </div>
+
+        <div class="water-lines">
+          <div class="pump pump-a"><span class="red-label">6,449.00 kg</span></div>
+          <div class="round-node water-one">1</div>
+          <div class="pump pump-b"><span class="red-label">6,565.00 kg</span></div>
+          <div class="round-node water-two">2</div>
+        </div>
+
+        <div class="process-column">
+          <div class="hopper small-hopper">
+            <span class="blue-label">0.00 kg</span>
+            <div class="orange-valve"></div>
+          </div>
+          <div class="hopper mixer-hopper">
+            <span class="blue-label">0.00 kg</span>
+            <div class="mixer-legs"></div>
+          </div>
+          <div class="additive-tank">
+            <span class="blue-label">0.00 kg</span>
+            <div class="sensor on-tank"></div>
+          </div>
+          <div class="wash">Washing</div>
+          <div class="pipe pipe-gray a"></div>
+          <div class="pipe pipe-gray b"></div>
+          <div class="pipe pipe-yellow"></div>
+          <div class="mixer">
+            <div class="drum"></div>
+            <div class="motor"></div>
+          </div>
+          <div class="readout readout-time">0 sec.</div>
+          <div class="readout readout-amp">0.00 A</div>
+          <div class="readout readout-time2">0 sec.</div>
+          <button class="control up">Up</button>
+          <button class="control down">Down</button>
+          <button class="stop">STOP</button>
+          <button class="start">START</button>
+          <button class="round-tool list"></button>
+          <button class="round-tool shield"></button>
+          <div class="warning">!</div>
+        </div>
+
+        <div class="red-incline">
+          <div class="aggregate-flow"></div>
+        </div>
+        <div class="arrow-stream">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="brake">Brake Open</div>
+        <div class="machine-meta">
+          <span>MACHINE ID</span><b>QM30</b><span>1</span><span>4</span><span>8</span><span>12</span><span>16</span><span>20</span><b>ABB</b>
+        </div>
+        <div class="volume">0.00 m<sup>3</sup></div>
+      </div>
+
+      <aside class="cement-area">
+        <div class="filter top-filter">Filter 1</div>
+        <div class="filter top-filter two">Filter 2</div>
+        <div class="cement-silo silo-one">
+          <span class="red-label">183,310.00 kg</span>
+          <div class="silo-platform"></div>
+          <div class="silo-body"></div>
+          <div class="silo-cone"></div>
+          <div class="silo-frame"></div>
+          <div class="silo-ladder"></div>
+          <div class="silo-name">ELKON<br><small>cimento1</small></div>
+          <span class="blue-label mid">0.00 kg</span>
+          <div class="round-node">1</div>
+        </div>
+        <div class="cement-silo silo-two">
+          <span class="red-label">0.00 kg</span>
+          <div class="silo-platform"></div>
+          <div class="silo-body"></div>
+          <div class="silo-cone"></div>
+          <div class="silo-frame"></div>
+          <div class="silo-ladder"></div>
+          <div class="silo-name">ELKON<br><small>cimento2</small></div>
+          <span class="blue-label mid">0.00 kg</span>
+          <div class="round-node">2</div>
+        </div>
+        <div class="required-text r1">Inventory</div>
+        <div class="required-text r2">Required</div>
+        <div class="required-text r3">Air-Shocking</div>
+        <div class="red-screw">
+          <div class="screw-core"></div>
+          <div class="motor-blue"><span>0.00 A</span></div>
+        </div>
+        <div class="side-chevron top"></div>
+        <div class="side-chevron bottom"></div>
+        <div class="gauge-wrap">
+          <div class="auto-label">Yar Otomatik</div>
+          <div class="gauge">
+            <div class="needle"></div>
+            <div class="gauge-value">0.00 A</div>
+          </div>
+        </div>
+      </aside>
+
+      <footer class="bottom-panel">
+        <div class="truck"></div>
+        <div class="operator">Seyit Ceylan</div>
+        <div class="horn-panel">
+          <div class="panel-tabs"><span>Horn</span><span>Compressor</span><span>Reset</span><span>Start</span><span>Automatic/Manual</span></div>
+          <button class="panel-button horn"></button>
+          <button class="panel-button compressor"></button>
+          <button class="panel-light"></button>
+          <div class="zero">0</div>
+          <button class="panel-button large"></button>
+          <div class="mode-stack">
+            <button>Plant Manual</button>
+            <button class="active">Half Automatic</button>
+            <button>Plant Automatic</button>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <dialog id="alarmDialog" class="popup">
+      <form method="dialog">
+        <div class="popup-title">MIXPRO Message</div>
+        <p>System ready. All displayed values are mock data for UI review.</p>
+        <button>OK</button>
+      </form>
+    </dialog>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
