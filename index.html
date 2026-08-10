@@ -6,7 +6,7 @@
   <title>MIXPRO WinForms UI Prototype</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body data-theme="dark">
+<body class="theme-light">
   <main class="win-app" aria-label="Production control Windows application prototype">
     <div class="shell-titlebar">
       <span class="window-mark"></span>
@@ -46,8 +46,8 @@
       </dl>
       <div class="system-state">
         <b>System ready - UI mock only</b>
-        <button type="button" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
-          <span class="theme-indicator" aria-hidden="true"></span>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true"></span>
           <span class="theme-label">Light</span>
         </button>
       </div>
@@ -73,119 +73,69 @@
       </section>
     </aside>
 
-    <section class="machine-workspace" aria-label="Batching workspace">
+    <section class="machine-workspace" aria-label="New machine generation workspace">
       <div class="machine-canvas">
-        <section class="material-grid" aria-label="Material hopper groups">
-          <article class="material-card">
-            <div class="material-head">
+        <section class="vertical-machine-card" aria-label="Aggregate silo card">
+          <div class="machine-section active">
+            <div class="section-caption">
               <b>Aggregate</b>
-              <strong>WEIGHING</strong>
+              <span>WEIGHING</span>
             </div>
-            <div class="percent-grid">
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>200</em><b>198</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>180</em><b>176</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>220</em><b>218</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>160</em><b>158</b></span>
+            <div class="silo-bank">
+              <div class="mini-silo"><i>Pd. 0.0%</i><i>M 0.0%</i><em>HB-1</em></div>
+              <div class="mini-silo"><i>Pd. 0.0%</i><i>M 0.0%</i><em>HB-2</em></div>
+              <div class="mini-silo"><i>Pd. 0.0%</i><i>M 0.0%</i><em>HB-3</em></div>
+              <div class="mini-silo"><i>Pd. 0.0%</i><i>M 0.0%</i><em>HB-4</em></div>
             </div>
-            <div class="scale-ui" aria-label="Aggregate scale">
-              <output>0.00</output>
-            </div>
-          </article>
-          <article class="material-card">
-            <div class="material-head">
+          </div>
+          <div class="machine-section">
+            <div class="section-caption">
               <b>Cement</b>
-              <strong>READY</strong>
+              <span>READY</span>
             </div>
-            <div class="percent-grid muted">
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+            <div class="silo-bank">
+              <div class="mini-silo"><i></i><i></i><em>HB-5</em></div>
+              <div class="mini-silo"><i></i><i></i><em>HB-6</em></div>
+              <div class="mini-silo"><i></i><i></i><em>HB-7</em></div>
+              <div class="mini-silo"><i></i><i></i><em>HB-8</em></div>
             </div>
-            <div class="scale-ui" aria-label="Cement scale">
-              <output>0.00</output>
-            </div>
-          </article>
-          <article class="material-card">
-            <div class="material-head">
+          </div>
+          <div class="machine-section">
+            <div class="section-caption">
               <b>Water</b>
-              <strong>READY</strong>
+              <span>STANDBY</span>
             </div>
-            <div class="percent-grid muted">
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+            <div class="silo-bank">
+              <div class="mini-silo"><i></i><i></i><em>HB-9</em></div>
+              <div class="mini-silo"><i></i><i></i><em>HB-10</em></div>
+              <div class="mini-silo"><i></i><i></i><em>HB-11</em></div>
+              <div class="mini-silo"><i></i><i></i><em>HB-12</em></div>
             </div>
-            <div class="scale-ui" aria-label="Water scale">
-              <output>0.00</output>
-            </div>
-          </article>
-          <article class="material-card">
-            <div class="material-head">
+          </div>
+          <div class="machine-section">
+            <div class="section-caption">
               <b>Admixture</b>
-              <strong>READY</strong>
+              <span>STANDBY</span>
             </div>
-            <div class="percent-grid muted">
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
-            </div>
-            <div class="scale-ui" aria-label="Admixture scale">
-              <output>0.00</output>
-            </div>
-          </article>
-        </section>
-
-        <div class="flow-marker" aria-hidden="true">
-          <span></span>
-        </div>
-
-        <section class="skip-zone" aria-label="Skip zone progress">
-          <div class="skip-flow">
-            <div class="skip-step active">
-              <span class="step-node step-ready"></span>
-              <span class="step-index">1</span>
-              <b>Down<br>ready</b>
-            </div>
-            <span class="flow-line"></span>
-            <div class="skip-step">
-              <span class="step-node step-slack"></span>
-              <span class="step-index">2</span>
-              <b>Slack</b>
-            </div>
-            <span class="flow-line"></span>
-            <div class="skip-step">
-              <span class="step-node step-wait"></span>
-              <span class="step-index">3</span>
-              <b>Wait</b>
-            </div>
-            <span class="flow-line"></span>
-            <div class="skip-step">
-              <span class="step-node step-dump"></span>
-              <span class="step-index">4</span>
-              <b>Top<br>dump</b>
+            <div class="silo-bank">
+              <div class="mini-silo"><i></i><i></i><em>HB-13</em></div>
+              <div class="mini-silo"><i></i><i></i><em>HB-14</em></div>
+              <div class="mini-silo"><i></i><i></i><em>HB-15</em></div>
+              <div class="mini-silo"><i></i><i></i><em>HB-16</em></div>
             </div>
           </div>
         </section>
-
-        <div class="flow-marker" aria-hidden="true">
-          <span></span>
-        </div>
-
         <section class="mixer-unit" aria-label="Mixer">
-          <div class="mixer-status">
-            <b>Batch 2 / 5</b>
-            <time>00:28 / 00:60</time>
-            <div class="mixer-controls" aria-label="Mixer control states">
-              <button type="button"><i></i><span>Closed</span></button>
-              <button type="button"><i></i><span>Time</span></button>
-              <button type="button" class="active"><i></i><span>Half</span></button>
-              <button type="button"><i></i><span>2/3</span></button>
-              <button type="button"><i></i><span>Open</span></button>
+          <div class="mixer-shell">
+            <div class="mixer-chamber left"></div>
+            <div class="mixer-chamber center"></div>
+            <div class="mixer-chamber right"></div>
+            <div class="mixer-label">
+              <span>Mixing Time</span>
+              <b>Batch 2 / 5</b>
             </div>
           </div>
+          <div class="mixer-outlet"></div>
         </section>
       </div>
     </section>

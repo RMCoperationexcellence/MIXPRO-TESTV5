@@ -7,38 +7,29 @@ const dialog = document.getElementById("alarmDialog");
 const tabs = document.querySelectorAll(".top-tabs .tab");
 const modeButtons = document.querySelectorAll(".mode-stack button");
 const plant = document.querySelector(".plant");
-const themeToggle = document.querySelector(".theme-toggle");
-const themeLabel = document.querySelector(".theme-label");
+const themeToggle = document.getElementById("themeToggle");
+const themeLabel = themeToggle?.querySelector(".theme-label");
 
 let tick = 0;
-const THEME_STORAGE_KEY = "mixpro-theme";
 
-function getSavedTheme() {
-  try {
-    return localStorage.getItem(THEME_STORAGE_KEY);
-  } catch {
-    return null;
+function setTheme(theme) {
+  const isLight = theme !== "dark";
+  document.body.classList.toggle("theme-light", isLight);
+  document.body.classList.toggle("theme-dark", !isLight);
+
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-pressed", String(!isLight));
   }
-}
 
-function saveTheme(theme) {
-  try {
-    localStorage.setItem(THEME_STORAGE_KEY, theme);
-  } catch {
-    // The toggle still works when storage is blocked.
+  if (themeLabel) {
+    themeLabel.textContent = isLight ? "Light" : "Dark";
   }
-}
 
-function applyTheme(theme) {
-  const nextTheme = theme === "light" ? "light" : "dark";
-  document.body.dataset.theme = nextTheme;
-
-  if (!themeToggle || !themeLabel) return;
-
-  const isLight = nextTheme === "light";
-  themeToggle.setAttribute("aria-pressed", String(isLight));
-  themeToggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
-  themeLabel.textContent = isLight ? "Dark" : "Light";
+  try {
+    localStorage.setItem("mixpro-theme", isLight ? "light" : "dark");
+  } catch (error) {
+    // Theme still changes even when storage is unavailable.
+  }
 }
 
 function padNumber(value, digits = 2) {
@@ -81,14 +72,6 @@ modeButtons.forEach((button) => {
   });
 });
 
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    const nextTheme = document.body.dataset.theme === "light" ? "dark" : "light";
-    applyTheme(nextTheme);
-    saveTheme(nextTheme);
-  });
-}
-
 if (startButton && stopButton && plant) {
   startButton.addEventListener("click", () => {
     plant.classList.add("running");
@@ -106,6 +89,22 @@ if (startButton && stopButton && plant) {
   });
 }
 
+if (themeToggle) {
+  let savedTheme = "light";
+
+  try {
+    savedTheme = localStorage.getItem("mixpro-theme") || "light";
+  } catch (error) {
+    savedTheme = "light";
+  }
+
+  setTheme(savedTheme || "light");
+
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = document.body.classList.contains("theme-light") ? "dark" : "light";
+    setTheme(nextTheme);
+  });
+}
+
 setInterval(updateMockReadings, 900);
-applyTheme(getSavedTheme());
 updateMockReadings();
