@@ -6,225 +6,205 @@
   <title>MIXPRO WinForms UI Prototype</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-theme="dark">
   <main class="win-app" aria-label="Production control Windows application prototype">
-    <nav class="top-tabs">
-      <button class="tab active"><span class="tab-icon gear"></span>Operation Pages</button>
-      <button class="tab"><span class="tab-icon wrench"></span>Musteri Bilgileri</button>
-      <button class="tab"><span class="tab-icon recipe"></span>Recipes</button>
-      <button class="tab wide"><span class="tab-icon plan"></span>Uretim Planlama ve<br>Raporlari</button>
-      <button class="tab"><span class="tab-icon inv"></span>Inventory Operations</button>
-      <button class="tab"><span class="tab-icon users"></span>User Operations</button>
-      <button class="tab"><span class="tab-icon settings"></span>Settings</button>
-      <button class="tab"><span class="tab-icon setup"></span>Setup</button>
-      <button class="tab"><span class="tab-icon logout"></span>Log Out</button>
-    </nav>
+    <div class="shell-titlebar">
+      <span class="window-mark"></span>
+      <span>MIXPRO Batching Control - WinForms UI Mock</span>
+      <div class="window-buttons"><span>-</span><span>□</span><span>×</span></div>
+    </div>
 
-    <section class="plant">
-      <aside class="meter-stack">
-        <div class="meter-card small">
-          <div class="meter-title">Aggregate</div>
-          <div class="led">0.00</div>
-          <div class="micro-controls">
-            <span></span><span></span><span></span><span></span>
-          </div>
-        </div>
-        <div class="meter-card small">
-          <div class="meter-title">Cement</div>
-          <div class="led">0.00</div>
-          <div class="micro-controls">
-            <span></span><span></span><span></span><span></span>
-          </div>
-        </div>
-        <div class="meter-card small">
-          <div class="meter-title">Water</div>
-          <div class="led">0.00</div>
-          <div class="micro-controls">
-            <span></span><span></span><span></span><span></span>
-          </div>
-        </div>
-        <div class="meter-card small">
-          <div class="meter-title">Additive</div>
-          <div class="led">0.00</div>
-          <div class="micro-controls">
-            <span></span><span></span><span></span><span></span>
-          </div>
-        </div>
-        <div class="meter-card analyzer">
-          <div class="meter-title">Analyzer</div>
-          <div class="analyzer-face">
-            <div class="scale-line"></div>
-            <div class="analyzer-numbers">
-              <span>0.00</span>
-              <span>0.00</span>
-              <span>0.00</span>
-            </div>
-            <div class="analyzer-units">
-              <b>V</b>
-              <b>A</b>
-              <b>Hz</b>
-            </div>
-          </div>
-          <div class="micro-controls round">
-            <span></span><span></span><span></span><span></span>
-          </div>
-        </div>
-      </aside>
+    <aside class="shell-sidebar">
+      <div class="brand">MIXPRO</div>
+      <button class="side-item active">AUTO</button>
+      <button class="side-item">MANUAL</button>
+      <button class="side-item">MIX DESIGN</button>
+      <button class="side-item">SILO</button>
+      <button class="side-item">SETTINGS</button>
+      <button class="side-item">INVENTORY</button>
+      <button class="side-item">DAILY</button>
+      <button class="side-item">GENERAL</button>
+      <button class="side-item">REPORT</button>
+      <button class="side-item">UTILITIES</button>
+      <button class="side-item">HELP</button>
+    </aside>
 
-      <div class="aggregate-area">
-        <div class="inventory-table">
-          <div></div><b>Required</b><b>Given</b><b>Inventory</b>
-          <span>0.00 kg</span><span>0.00 kg</span><strong>+14,001.00</strong>
-          <span>0.00 kg</span><span>0.00 kg</span><strong>-10,150.00</strong>
-          <span>0.00 kg</span><span>0.00 kg</span><strong>-10,565.00</strong>
-          <span>0.00 kg</span><span>0.00 kg</span><strong>-4,239.00</strong>
-        </div>
-        <div class="bin-row">
-          <div class="agg-bin"><div class="sensor"></div><div class="gate"></div><div class="bin-no">1</div><p>TAS TOZU</p></div>
-          <div class="agg-bin"><div class="gate"></div><div class="bin-no">2</div><p>YIKANMIS KUM</p></div>
-          <div class="agg-bin"><div class="gate"></div><div class="bin-no">3</div><p>MICIR</p></div>
-          <div class="agg-bin"><div class="gate"></div><div class="bin-no">4</div></div>
-        </div>
-        <div class="blue-conveyor">
-          <div class="belt-teeth"></div>
-          <div class="yellow-roller left"></div>
-          <div class="yellow-roller right"></div>
-        </div>
-        <div class="scale-label">0.00 kg</div>
-        <div class="sensor ground"></div>
+    <header class="shell-header">
+      <div>
+        <h1>MIXPRO Batching</h1>
+        <span class="process-state">AUTO &gt; IN PROCESS</span>
       </div>
-
-      <div class="central-process">
-        <div class="silo-cluster top">
-          <div class="cement-feed left-feed">
-            <label>katki1</label>
-            <div class="silo-icon"></div>
-            <span class="blue-label">271.10 kg</span>
-            <span class="red-label">-210.30 kg</span>
-            <div class="round-node">1</div>
-            <div class="blue-label small-label">0.00 kg</div>
-          </div>
-          <div class="cement-feed right-feed">
-            <div class="silo-icon"></div>
-            <div class="round-node">2</div>
-            <div class="blue-label small-label">0.00 kg</div>
-          </div>
-        </div>
-
-        <div class="water-lines">
-          <div class="pump pump-a"><span class="red-label">6,449.00 kg</span></div>
-          <div class="round-node water-one">1</div>
-          <div class="pump pump-b"><span class="red-label">6,565.00 kg</span></div>
-          <div class="round-node water-two">2</div>
-        </div>
-
-        <div class="process-column">
-          <div class="hopper small-hopper">
-            <span class="blue-label">0.00 kg</span>
-            <div class="orange-valve"></div>
-          </div>
-          <div class="hopper mixer-hopper">
-            <span class="blue-label">0.00 kg</span>
-            <div class="mixer-legs"></div>
-          </div>
-          <div class="additive-tank">
-            <span class="blue-label">0.00 kg</span>
-            <div class="sensor on-tank"></div>
-          </div>
-          <div class="wash">Washing</div>
-          <div class="pipe pipe-gray a"></div>
-          <div class="pipe pipe-gray b"></div>
-          <div class="pipe pipe-yellow"></div>
-          <div class="mixer">
-            <div class="drum"></div>
-            <div class="motor"></div>
-          </div>
-          <div class="readout readout-time">0 sec.</div>
-          <div class="readout readout-amp">0.00 A</div>
-          <div class="readout readout-time2">0 sec.</div>
-          <button class="control up">Up</button>
-          <button class="control down">Down</button>
-          <button class="stop">STOP</button>
-          <button class="start">START</button>
-          <button class="round-tool list"></button>
-          <button class="round-tool shield"></button>
-          <div class="warning">!</div>
-        </div>
-
-        <div class="red-incline">
-          <div class="aggregate-flow"></div>
-        </div>
-        <div class="arrow-stream">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-        <div class="brake">Brake Open</div>
-        <div class="machine-meta">
-          <span>MACHINE ID</span><b>QM30</b><span>1</span><span>4</span><span>8</span><span>12</span><span>16</span><span>20</span><b>ABB</b>
-        </div>
-        <div class="volume">0.00 m<sup>3</sup></div>
+      <dl class="batch-meta">
+        <div><dt>DP NO.</dt><dd>DP-260804-0</dd></div>
+        <div><dt>QTY</dt><dd>6.0 m3</dd></div>
+        <div><dt>BATCH SIZE</dt><dd>.50 m3</dd></div>
+        <div><dt>PRODUCT NO.</dt><dd>C35/40</dd></div>
+        <div><dt>SLUMP</dt><dd>100 mm</dd></div>
+        <div><dt>SPD</dt><dd>42 RPM</dd></div>
+        <div><dt>INDEX</dt><dd>PC-01</dd></div>
+        <div><dt>TRUCK NO.</dt><dd>TM-07</dd></div>
+      </dl>
+      <div class="system-state">
+        <b>System ready - UI mock only</b>
+        <button type="button" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
+          <span class="theme-indicator" aria-hidden="true"></span>
+          <span class="theme-label">Light</span>
+        </button>
       </div>
+    </header>
 
-      <aside class="cement-area">
-        <div class="filter top-filter">Filter 1</div>
-        <div class="filter top-filter two">Filter 2</div>
-        <div class="cement-silo silo-one">
-          <span class="red-label">183,310.00 kg</span>
-          <div class="silo-platform"></div>
-          <div class="silo-body"></div>
-          <div class="silo-cone"></div>
-          <div class="silo-frame"></div>
-          <div class="silo-ladder"></div>
-          <div class="silo-name">ELKON<br><small>cimento1</small></div>
-          <span class="blue-label mid">0.00 kg</span>
-          <div class="round-node">1</div>
-        </div>
-        <div class="cement-silo silo-two">
-          <span class="red-label">0.00 kg</span>
-          <div class="silo-platform"></div>
-          <div class="silo-body"></div>
-          <div class="silo-cone"></div>
-          <div class="silo-frame"></div>
-          <div class="silo-ladder"></div>
-          <div class="silo-name">ELKON<br><small>cimento2</small></div>
-          <span class="blue-label mid">0.00 kg</span>
-          <div class="round-node">2</div>
-        </div>
-        <div class="required-text r1">Inventory</div>
-        <div class="required-text r2">Required</div>
-        <div class="required-text r3">Air-Shocking</div>
-        <div class="red-screw">
-          <div class="screw-core"></div>
-          <div class="motor-blue"><span>0.00 A</span></div>
-        </div>
-        <div class="side-chevron top"></div>
-        <div class="side-chevron bottom"></div>
-        <div class="gauge-wrap">
-          <div class="auto-label">Yar Otomatik</div>
-          <div class="gauge">
-            <div class="needle"></div>
-            <div class="gauge-value">0.00 A</div>
-          </div>
-        </div>
-      </aside>
+    <aside class="right-dock">
+      <section class="message-panel">
+        <div class="panel-head"><b>DP No.</b><button>Clear</button></div>
+        <table>
+          <thead><tr><th>DP No.</th><th>Message</th><th>Time</th></tr></thead>
+          <tbody>
+            <tr><td>0006</td><td>Flap Close</td><td>10:24:31</td></tr>
+            <tr><td>0012</td><td>Cement Gate...</td><td>10:25:02</td></tr>
+            <tr><td>0041</td><td>Water Flow L...</td><td>10:25:18</td></tr>
+            <tr><td>0098</td><td>Truck Positio...</td><td>10:26:10</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="warning-panel">
+        <b>Warning</b>
+        <span>Mixer gate not closed</span>
+        <span>Check skip hoist position</span>
+      </section>
+    </aside>
 
-      <footer class="bottom-panel">
-        <div class="truck"></div>
-        <div class="operator">Seyit Ceylan</div>
-        <div class="horn-panel">
-          <div class="panel-tabs"><span>Horn</span><span>Compressor</span><span>Reset</span><span>Start</span><span>Automatic/Manual</span></div>
-          <button class="panel-button horn"></button>
-          <button class="panel-button compressor"></button>
-          <button class="panel-light"></button>
-          <div class="zero">0</div>
-          <button class="panel-button large"></button>
-          <div class="mode-stack">
-            <button>Plant Manual</button>
-            <button class="active">Half Automatic</button>
-            <button>Plant Automatic</button>
-          </div>
+    <section class="machine-workspace" aria-label="Batching workspace">
+      <div class="machine-canvas">
+        <section class="material-grid" aria-label="Material hopper groups">
+          <article class="material-card">
+            <div class="material-head">
+              <b>Aggregate</b>
+              <strong>WEIGHING</strong>
+            </div>
+            <div class="percent-grid">
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>200</em><b>198</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>180</em><b>176</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>220</em><b>218</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>160</em><b>158</b></span>
+            </div>
+            <div class="scale-ui" aria-label="Aggregate scale">
+              <output>0.00</output>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-head">
+              <b>Cement</b>
+              <strong>READY</strong>
+            </div>
+            <div class="percent-grid muted">
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+            </div>
+            <div class="scale-ui" aria-label="Cement scale">
+              <output>0.00</output>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-head">
+              <b>Water</b>
+              <strong>READY</strong>
+            </div>
+            <div class="percent-grid muted">
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+            </div>
+            <div class="scale-ui" aria-label="Water scale">
+              <output>0.00</output>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-head">
+              <b>Admixture</b>
+              <strong>READY</strong>
+            </div>
+            <div class="percent-grid muted">
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+              <span><small><i>Pb.</i><u>0%</u></small><small><i>M</i><u>0%</u></small><em>0</em><b>0</b></span>
+            </div>
+            <div class="scale-ui" aria-label="Admixture scale">
+              <output>0.00</output>
+            </div>
+          </article>
+        </section>
+
+        <div class="flow-marker" aria-hidden="true">
+          <span></span>
         </div>
-      </footer>
+
+        <section class="skip-zone" aria-label="Skip zone progress">
+          <div class="skip-flow">
+            <div class="skip-step active">
+              <span class="step-node step-ready"></span>
+              <span class="step-index">1</span>
+              <b>Down<br>ready</b>
+            </div>
+            <span class="flow-line"></span>
+            <div class="skip-step">
+              <span class="step-node step-slack"></span>
+              <span class="step-index">2</span>
+              <b>Slack</b>
+            </div>
+            <span class="flow-line"></span>
+            <div class="skip-step">
+              <span class="step-node step-wait"></span>
+              <span class="step-index">3</span>
+              <b>Wait</b>
+            </div>
+            <span class="flow-line"></span>
+            <div class="skip-step">
+              <span class="step-node step-dump"></span>
+              <span class="step-index">4</span>
+              <b>Top<br>dump</b>
+            </div>
+          </div>
+        </section>
+
+        <div class="flow-marker" aria-hidden="true">
+          <span></span>
+        </div>
+
+        <section class="mixer-unit" aria-label="Mixer">
+          <div class="mixer-status">
+            <b>Batch 2 / 5</b>
+            <time>00:28 / 00:60</time>
+            <div class="mixer-controls" aria-label="Mixer control states">
+              <button type="button"><i></i><span>Closed</span></button>
+              <button type="button"><i></i><span>Time</span></button>
+              <button type="button" class="active"><i></i><span>Half</span></button>
+              <button type="button"><i></i><span>2/3</span></button>
+              <button type="button"><i></i><span>Open</span></button>
+            </div>
+          </div>
+        </section>
+      </div>
     </section>
+    <footer class="shell-actions">
+      <button class="cmd green">Start</button>
+      <button class="cmd amber">Pause</button>
+      <button class="cmd amber">Pause</button>
+      <button class="cmd red">Stop</button>
+      <button class="cmd cyan">Discharge</button>
+      <button class="cmd">Fill</button>
+      <button class="cmd">Flush</button>
+    </footer>
+
+    <div class="shell-status">
+      <span>PLC: CP1H 0095</span>
+      <b>PLC CONNECTED</b>
+      <span>NETWORK: LOCAL</span>
+      <time>2569-08-07 14:19:44</time>
+    </div>
 
     <dialog id="alarmDialog" class="popup">
       <form method="dialog">
