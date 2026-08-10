@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 66">
+  <defs>
+    <linearGradient id="rim" x1="0" x2="1">
+      <stop offset="0" stop-color="#252b33"/>
+      <stop offset=".2" stop-color="#9aa7b4"/>
+      <stop offset=".52" stop-color="#3b4655"/>
+      <stop offset=".82" stop-color="#c2c9cf"/>
+      <stop offset="1" stop-color="#252b33"/>
+    </linearGradient>
+    <radialGradient id="drum" cx=".48" cy=".46" r=".62">
+      <stop offset="0" stop-color="#bbc8d2"/>
+      <stop offset=".42" stop-color="#647383"/>
+      <stop offset=".78" stop-color="#202833"/>
+      <stop offset="1" stop-color="#0d1118"/>
+    </radialGradient>
+    <linearGradient id="motor" x1="0" x2="1">
+      <stop offset="0" stop-color="#24444d"/>
+      <stop offset=".42" stop-color="#a7d5dd"/>
+      <stop offset="1" stop-color="#20363d"/>
+    </linearGradient>
+  </defs>
+  <path d="M20 51h84" stroke="#252525" stroke-width="4" stroke-linecap="round"/>
+  <path d="M32 48l-12 13M82 48l11 13" stroke="#39424c" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="57" cy="30" rx="48" ry="24" fill="url(#drum)" stroke="#252a31" stroke-width="4"/>
+  <ellipse cx="57" cy="30" rx="35" ry="15" fill="none" stroke="url(#rim)" stroke-width="7"/>
+  <path d="M20 30h74" stroke="#d5dde4" stroke-width="2" opacity=".55"/>
+  <path d="M27 18c17-9 42-10 63-1" stroke="#fff" stroke-width="4" opacity=".35"/>
+  <path d="M100 19h26v25h-26z" fill="url(#motor)" stroke="#293d44" stroke-width="3"/>
+  <path d="M108 16h11v31h-11z" fill="#5b6e75" opacity=".65"/>
+  <path d="M103 24h22M103 31h22M103 38h22" stroke="#14343f" stroke-width="1"/>
+</svg>
